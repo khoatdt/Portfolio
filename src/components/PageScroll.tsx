@@ -1,9 +1,8 @@
 "use client";
 
 import ReactFullpage from "@fullpage/react-fullpage";
-import { Introduction } from "./introduction";
-import { About } from "./about";
-
+import { Introduction } from "./Introduction";
+import { About } from "./About";
 
 export function PageScroll() {
   return (
