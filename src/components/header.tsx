@@ -15,7 +15,7 @@ const Navbar = () => {
         section.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      router.push("/"); 
+      router.push("/");
       setTimeout(() => {
         const section = document.getElementById(id);
         if (section) {

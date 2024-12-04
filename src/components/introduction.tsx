@@ -2,8 +2,7 @@
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { SocialButton } from "@/components/ui/social-button";
-import { motion } from "framer-motion";
-import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
+import {  Highlight } from "@/components/ui/hero-highlight";
 
 export function Introduction() {
   const words = [
@@ -24,8 +23,8 @@ export function Introduction() {
   ];
   return (
     <div className="container overflow-hidden">
-      <div className="flex justify-between flex-col md:flex-row">
-        <div className="flex flex-col gap-10">
+      <div className="flex justify-between flex-col md:flex-row gap-40">
+        <div className="flex flex-col w-full md:w-[59rem]">
           <div className="border-b-4 border-black">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white">
               Welcome to,
@@ -38,7 +37,7 @@ export function Introduction() {
             <TypewriterEffectSmooth words={words} />
           </div>
 
-          <div className="flex gap-2 bg-white w-fit px-4 border-2 border-black border-r-4 border-b-4 rounded-lg">
+          <div className="flex gap-2 bg-white w-fit px-4 border-2 border-black border-r-4 border-b-4 rounded-lg mt-5">
             {/* github button */}
             <SocialButton to="https://github.com/khoatdt">
               <svg
@@ -93,7 +92,7 @@ export function Introduction() {
               Hi, I&apos;m Tuan Khoa
             </p>
             <p className="w-96 text-right font-semibold text-base">
-              a passionate <Highlight > Front-End Developer</Highlight> dedicated
+              a passionate <Highlight> Front-End Developer</Highlight> dedicated
               to creating seamless and visually stunning websites. I specialize
               in turning ideas into engaging, user-friendly digital experiences
               that leave a lasting impression.

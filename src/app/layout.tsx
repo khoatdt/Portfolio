@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { jetbrainsMono } from "@/components/ui/font";
-import Navbar from "@/components/header";
+import Navbar from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Khoa Portfolio",

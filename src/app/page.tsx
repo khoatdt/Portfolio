@@ -1,9 +1,5 @@
-import Introduction from "@/components/introduction";
+import PageScroll from "@/components/pageScroll";
 
 export default function Home() {
-  return (
-    <>
-      <Introduction />
-    </>
-  );
+  return <PageScroll />;
 }
