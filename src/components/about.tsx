@@ -6,7 +6,7 @@ export function About() {
   return (
     <>
       <div className="container overflow-hidden">
-        <div className="flex flex-row justify-between w-full  gap-36">
+        <div className="flex flex-row justify-between w-full  gap-32">
           <div className="space-y-4">
             <h1 className="text-3xl md:text-5xl font-bold border-b-4 border-black pb-4 text-black dark:text-white">
               What I do
@@ -17,9 +17,9 @@ export function About() {
               frontend expertise, driven by a passion for crafting visually
               stunning UI and proficiency lies in backend development using the
               .NET Framework, complemented by hands-on experience in
-              microservice projects. I'm also an enthusiastic on DevOps ,
+              microservice projects. I&apos;m also an enthusiastic on DevOps ,
               actively exploring AWS, Docker, and Kubernetes. Continuously
-              expanding my knowledge, I'm always eager to embrace new
+              expanding my knowledge, I&apos;m always eager to embrace new
               technologies and trends.
             </p>
 
@@ -33,8 +33,8 @@ export function About() {
             </button>
           </div>
 
-          <div className="card bg-base-100 w-full h-96 shadow-xl hidden md:block border-2 border-black border-r-8 border-b-8">
-            <figure className="px-6 pt-10">
+          <div className="card bg-base-100 w-full h-96 shadow-xl hidden xl:block border-2 border-black border-r-8 border-b-8">
+            <figure className="px-6 pt-8">
               <Image
                 src={"/PortfolioImage.jpg"}
                 alt="Shoes"

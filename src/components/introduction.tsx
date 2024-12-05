@@ -23,7 +23,7 @@ export function Introduction() {
   ];
   return (
     <div className="container overflow-hidden">
-      <div className="flex justify-between flex-col md:flex-row gap-40">
+      <div className="flex justify-between flex-col lg:flex-row gap-40">
         <div className="flex flex-col w-full md:w-[59rem]">
           <div className="border-b-4 border-black">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white">
@@ -88,10 +88,10 @@ export function Introduction() {
           </div>
 
           <div className="w-96 border-t-4 border-black">
-            <p className="w-96 text-right mt-2 font-semibold text-xl">
+            <p className="w-96 text-left lg:text-right mt-2 font-semibold text-xl">
               Hi, I&apos;m Tuan Khoa
             </p>
-            <p className="w-96 text-right font-semibold text-base">
+            <p className="w-96 text-left lg:text-right font-semibold text-base">
               a passionate <Highlight> Front-End Developer</Highlight> dedicated
               to creating seamless and visually stunning websites. I specialize
               in turning ideas into engaging, user-friendly digital experiences
