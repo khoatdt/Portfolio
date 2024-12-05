@@ -3,11 +3,12 @@
 import ReactFullpage from "@fullpage/react-fullpage";
 import { Introduction } from "./Introduction";
 import { About } from "./About";
+import { Contact } from "./Contact";
 
 export function PageScroll() {
   return (
     <ReactFullpage
-      licenseKey="gplv3-license" // Thay thế bằng license key nếu cần
+      licenseKey="gplv3-license"
       scrollHorizontally={true}
       scrollingSpeed={700} // Tốc độ scroll (miliseconds)
       credits={{
@@ -28,6 +29,9 @@ export function PageScroll() {
           </div>
 
           {/* Section 3: Contact */}
+          <div className="section">
+            <Contact />
+          </div>
         </ReactFullpage.Wrapper>
       )}
     />
