@@ -48,9 +48,9 @@
 .whatsapp .BG {
   background: #075e54;
 }
-.discord .BG {
+/* .discord .BG {
   background: #7289da;
-}
+} */
 .Btn:hover .BG {
   transform: scale(1.5);
   /* transform-origin: bottom; */

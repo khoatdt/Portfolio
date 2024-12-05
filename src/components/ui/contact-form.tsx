@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { useState } from "react";
 
 const EmailForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [toast, setToast] = useState<null | {
+    message: string;
+    type: "success" | "error";
+  }>(null);
 
   const validateForm = () => {
     if (!name || !email || !message) {
@@ -28,12 +31,11 @@ const EmailForm = () => {
 
     if (!validateForm()) return;
 
-    // Your EmailJS service ID, template ID, and Public Key
+    // EmailJS service config
     const serviceId = "service_i292z6u";
     const templateId = "template_4qp5s6m";
     const publicKey = "PEcdlXT3LAeoXevp4";
 
-    // Create a new object that contains dynamic template params
     const templateParams = {
       from_name: name,
       from_email: email,
@@ -41,7 +43,6 @@ const EmailForm = () => {
       message: message,
     };
 
-    // Send the email using EmailJS
     emailjs
       .send(serviceId, templateId, templateParams, publicKey)
       .then((response) => {
@@ -50,6 +51,7 @@ const EmailForm = () => {
         setEmail("");
         setMessage("");
         showToast("Message sent successfully!", "success");
+        console.log("Current toast state:", toast);
       })
       .catch((error) => {
         console.error("Error sending email:", error);
@@ -58,25 +60,26 @@ const EmailForm = () => {
   };
 
   const showToast = (message: string, type: "success" | "error") => {
-    const toast = document.createElement("div");
-    toast.className = `toast toast-${type} fixed bottom-4 right-4 z-50 flex items-center justify-center p-4 rounded-lg shadow-lg max-w-fit h-fit`;
-    toast.innerText = message;
-
-    if (type === "success") {
-      toast.classList.add("bg-green-500", "text-white");
-    } else if (type === "error") {
-      toast.classList.add("bg-red-500", "text-white");
-    }
-
-    document.body.appendChild(toast);
+    console.log("Setting toast:", { message, type });
+    setToast({ message, type });
 
     setTimeout(() => {
-      document.body.removeChild(toast);
+      console.log("Clearing toast");
+      setToast(null); // Remove toast after 3 seconds
     }, 3000);
   };
 
   return (
-    <div className=" mt-5 ">
+    <div className="mt-5">
+      {toast && (
+        <div
+          className={`${
+            toast.type === "success" ? "bg-green-500" : "bg-red-500"
+          } absolute bottom-20 right-0 text-white font-semibold p-2 rounded-lg`}
+        >
+          <p>{toast.message}</p>
+        </div>
+      )}
       <form
         onSubmit={handleSubmit}
         className="flex flex-col space-y-4 bg-white p-6 border-black border-2 border-r-4 border-b-4 rounded-lg"
