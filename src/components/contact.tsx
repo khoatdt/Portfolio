@@ -12,7 +12,7 @@ export function Contact() {
           Contact Me
         </h1>
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between md:justify-center">
         <EmailForm />
 
         <CardCv />

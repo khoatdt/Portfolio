@@ -2,7 +2,7 @@
 
 const proeject = () => {
     return (
-        <div>proeject</div>
+        <div>project</div>
     )
 }
 

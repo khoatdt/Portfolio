@@ -2,29 +2,14 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import React from "react";
-
-const Navbar = () => {
-  const pathname = usePathname();
+declare global {
+  interface Window {
+    fullpage_api: any; // replace 'any' with the correct type if available
+  }
+}
+const navbar = () => {
+  const pathName = usePathname();
   const router = useRouter();
-
-  const handleScroll = (id: string) => {
-    if (pathname === "/") {
-      const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
-      router.push("/");
-      setTimeout(() => {
-        const section = document.getElementById(id);
-        if (section) {
-          section.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 100);
-    }
-  };
-
   return (
     <nav className="fixed top-0 w-full bg-seashell shadow-md z-50 border-b-2 border-black">
       <div className="max-w-6xl mx-auto px-4">
@@ -38,20 +23,29 @@ const Navbar = () => {
 
             <div className="space-x-6 text-black flex items-center">
               <button
-                className="btn btn-sm bg-seashell"
-                onClick={() => handleScroll("about")}
+                className="btn btn-sm bg-seashell "
+                onClick={() => {
+                  if (pathName !== "/") {
+                    router.push("/");
+                    window.fullpage_api.moveTo(2);
+                  }
+                  window.fullpage_api.moveTo(2);
+                }}
               >
                 About
               </button>
-              <button
-                onClick={() => handleScroll("projects")}
-                className="btn btn-sm bg-seashell"
-              >
-                Projects
+              <button className="btn btn-sm bg-seashell ">
+                <Link href={"/projects"}>Project</Link>
               </button>
               <button
-                onClick={() => handleScroll("contact")}
-                className="btn btn-sm bg-seashell"
+                className="btn btn-sm bg-seashell "
+                onClick={() => {
+                  if (pathName !== "/") {
+                    router.push("/");
+                    window.fullpage_api.moveTo(3);
+                  }
+                  window.fullpage_api.moveTo(3);
+                }}
               >
                 Contact
               </button>
@@ -63,4 +57,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default navbar;
