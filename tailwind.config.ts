@@ -12,6 +12,10 @@ module.exports = {
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   darkMode: "class",
   theme: {
+    container: {
+      center: true,
+      padding: "1rem",
+    },
     extend: {
       colors: {
         seashell: '#FFF5EE', // Thêm màu với tên 'seashell'
