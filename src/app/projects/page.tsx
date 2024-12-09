@@ -1,9 +1,15 @@
-"use client"
+"use client";
+import { CardProject } from "@/components/ui/card-project";
+import { listProjects } from "@/data/projects";
 
-const proeject = () => {
-    return (
-        <div>project</div>
-    )
-}
+const project = () => {
+  return (
+    <>
+      {listProjects.map((project: any, index: number) => (
+        <CardProject key={index} project={project} />
+      ))}
+    </>
+  );
+};
 
-export default proeject;
+export default project;

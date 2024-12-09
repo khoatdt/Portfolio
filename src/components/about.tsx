@@ -6,7 +6,7 @@ export function About() {
   return (
     <>
       <div className="container overflow-hidden">
-        <div className="flex flex-row justify-between w-full  gap-32">
+        <div className="flex flex-row justify-between w-full gap-20">
           <div className="space-y-4">
             <h1 className="text-3xl md:text-5xl font-bold border-b-4 border-black pb-4 text-black dark:text-white">
               What I do

@@ -8,7 +8,7 @@ export function Contact() {
   return (
     <div className="container mx-auto">
       <div className="place-items-center">
-        <h1 className="text-3xl w-fit md:text-5xl font-bold rounded-lg border border-b-4 border-r-4 border-black p-4 bg-white ">
+        <h1 className="text-3xl w-fit md:text-5xl font-bold rounded-lg border border-b-4 border-r-4 border-black p-4 bg-white mt-16">
           Contact Me
         </h1>
       </div>

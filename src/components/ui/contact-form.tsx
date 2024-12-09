@@ -82,10 +82,12 @@ const EmailForm = () => {
       )}
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col space-y-4 bg-white p-6 border-black border-2 border-r-4 border-b-4 rounded-lg"
+        className="flex flex-col space-y-3 bg-white p-6 border-black border-2 border-r-4 border-b-4 rounded-lg"
       >
         <div className="flex flex-col gap-3">
-          <label htmlFor="Name">Name</label>
+          <label htmlFor="Name" className="font-semibold">
+            Name
+          </label>
           <input
             className="border-2 border-black border-r-4 border-b-4 p-2 rounded-lg"
             type="text"
@@ -96,7 +98,9 @@ const EmailForm = () => {
         </div>
 
         <div className="flex flex-col gap-3">
-          <label htmlFor="Email">Email</label>
+          <label htmlFor="Email" className="font-semibold">
+            Email
+          </label>
           <input
             className="border-2 border-black border-r-4 border-b-4 p-2 rounded-lg"
             type="email"
@@ -106,7 +110,9 @@ const EmailForm = () => {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="Message">Message</label>
+          <label htmlFor="Message" className="font-semibold">
+            Message
+          </label>
           <textarea
             className="border-2 border-black border-r-4 border-b-4 p-2 rounded-lg resize-none"
             placeholder="Type Your Message Here."

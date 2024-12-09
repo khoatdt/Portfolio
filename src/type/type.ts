@@ -20,7 +20,7 @@ export interface Project {
     description: string;
     thumbnail: string;
     role: string[];
-    objectives: string;
+    objective: string;
     features?: feature[];
     technical: Technical[];
     screenshots?: Image[];
