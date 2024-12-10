@@ -23,7 +23,7 @@ export function Introduction() {
   ];
   return (
     <div className="container overflow-hidden">
-      <div className="flex justify-between flex-col lg:flex-row gap-40">
+      <div className="flex justify-between flex-col lg:flex-row gap-36">
         <div className="flex flex-col w-full md:w-[59rem]">
           <div className="border-b-4 border-black">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white">

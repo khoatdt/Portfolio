@@ -29,9 +29,10 @@ export function About() {
 
           <div className="card bg-base-100 w-full h-96 shadow-xl hidden xl:block border-2 border-black border-r-8 border-b-8">
             <figure className="px-6 pt-8">
+              
               <Image
                 src={"/PortfolioImage.jpg"}
-                alt="Shoes"
+                alt="PortfolioImage"
                 className="rounded-xl"
                 width={400}
                 height={400}

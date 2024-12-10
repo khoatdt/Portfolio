@@ -15,7 +15,7 @@ export const listProjects: Project[] = [
             "Yomikaze is a graduation thesis project, a comic website and app that allows users to discover, follow, and read comics. It includes features like AI-powered translation from Japanese to English, commenting, rating, sharing, and a personalized account system for managing favorites and reading progress, with dark mode and offline reading support on mobile.",
 
 
-        thumbnail: "/YomikazeComics/S2- Comic Detail.png",
+        thumbnail: "/YomikazeComics/HomePage.png",
         features: [
             {
                 name: "User Management",
@@ -113,7 +113,55 @@ export const listProjects: Project[] = [
             },
         ],
 
-        objective: "",
+        screenshots: [
+            {
+                src: "/YomikazeComics/HomePage.png",
+                id: 1
+            },
+            {
+                src: "/YomikazeComics/ComicDetail.png",
+                id: 2
+            },
+            {
+                src: "/YomikazeComics/AdvancedSearch.png",
+                id: 3
+            },
+            {
+                src: "/YomikazeComics/LibraryPage.png",
+                id: 4
+            },
+            {
+                src: "/YomikazeComics/LoginPage.png",
+                id: 5
+            },
+            {
+                src: "/YomikazeComics/ShoppingCoins.png",
+                id: 6
+            },
+            {
+                src: "/YomikazeComics/CreateComic.png",
+                id: 7
+            },
+            {
+                src: "/YomikazeComics/DashboardPage.png",
+                id: 8
+            },
+            {
+                src: "/YomikazeComics/ComicReportManagement.png",
+                id: 9
+            },
+            {
+                src: "/YomikazeComics/RoleRequests.png",
+                id: 10
+            }
+            ,
+            {
+                src: "/YomikazeComics/UserManagement.png",
+                id: 11
+            }
+        ],
+
+        objective: "The primary objective of this project is to develop a website and mobile applications to provide an online comic reading platform. Our goal is to provide an optimal comic reading experience by ensuring a smooth, user-friendly interface and modern reading functions. This platform will be available on smart devices and the web through the Yomikaze Android app available on Google Play.",
     },
 
     {
@@ -136,9 +184,37 @@ export const listProjects: Project[] = [
         ],
         features: [],
         objective: "",
+        screenshots: [
+            {
+                src: "/LearningManagementSystem/TrainningProgramList.png",
+                id: 1
+            },
+            {
+                src: "/LearningManagementSystem/UserManagement.png",
+                id: 2
+            }
+        ]
     },
     {
         id: 3,
+        title: "Khoa Portfolio",
+        description:
+            "Personal website for learning NextJS Process, including my information, projects, and contact information. I am excited to work with you on your next project!",
+
+        thumbnail: "/Portfolio/PortfolioScreen.png",
+        features: [],
+        role: ["Frontend Developer, Product Owner"],
+        objective: "",
+        technical: [],
+        screenshots: [
+            {
+                src: "/Portfolio/PortfolioScreen.png",
+                id: 1
+            }
+        ]
+    },
+    {
+        id: 4,
         title: "Khoa Portfolio",
         description:
             "Personal website for learning NextJS Process, including my information, projects, and contact information. I am excited to work with you on your next project!",
