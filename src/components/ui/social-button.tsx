@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 interface SocialButtonProps {
@@ -9,7 +10,7 @@ export const SocialButton =  ({ children, to }: SocialButtonProps) => {
   return (
     <div className="child">
       <button className="socialButton">
-        <a href={to}>{children}</a>
+        <Link href={to}>{children}</Link>
       </button>
     </div>
   );

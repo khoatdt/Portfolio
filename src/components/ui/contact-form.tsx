@@ -75,7 +75,7 @@ const EmailForm = () => {
         <div
           className={`${
             toast.type === "success" ? "bg-green-500" : "bg-red-500"
-          } absolute bottom-20 right-0 text-white font-semibold p-2 rounded-lg`}
+          } absolute bottom-20 right-20 text-white font-semibold p-2 rounded-lg`}
         >
           <p>{toast.message}</p>
         </div>
