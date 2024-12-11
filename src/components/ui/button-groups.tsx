@@ -1,10 +1,11 @@
 import React from "react";
 import "@/styles/button-groups.css";
+import Link from "next/link";
 
 const ButtonGroups = () => {
   return (
     <div className="flex space-x-4 pb-5">
-      <a href="tel: 0886050123" className="Btn whatsapp">
+      <Link href="tel: 0886050123" className="Btn whatsapp">
         <span className="svgContainer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -20,9 +21,9 @@ const ButtonGroups = () => {
           </svg>
         </span>
         <span className="BG"></span>
-      </a>
+      </Link>
 
-      <a href="https://www.facebook.com/Pha.17.4/" className="Btn facebook">
+      <Link href="https://www.facebook.com/Pha.17.4/" className="Btn facebook">
         <span className="svgContainer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -34,9 +35,9 @@ const ButtonGroups = () => {
           </svg>
         </span>
         <span className="BG"></span>
-      </a>
+      </Link>
 
-      <button className="Btn linkdin">
+      <Link href={"https://www.linkedin.com/in/#/"} className="Btn linkdin">
         <span className="svgContainer">
           <svg
             fill="white"
@@ -49,7 +50,7 @@ const ButtonGroups = () => {
           </svg>
         </span>
         <span className="BG"></span>
-      </button>
+      </Link>
     </div>
   );
 };

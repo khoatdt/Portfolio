@@ -2,14 +2,39 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+
 declare global {
   interface Window {
     fullpage_api: any; // replace 'any' with the correct type if available
   }
 }
-const navbar = () => {
+
+const Navbar = () => {
   const pathName = usePathname();
   const router = useRouter();
+
+  const handleAboutClick = () => {
+    if (typeof window !== "undefined" && window.fullpage_api) {
+      if (pathName !== "/") {
+        router.push("/");
+        window.fullpage_api.moveTo(2);
+      } else {
+        window.fullpage_api.moveTo(2);
+      }
+    }
+  };
+
+  const handleContactClick = () => {
+    if (typeof window !== "undefined" && window.fullpage_api) {
+      if (pathName !== "/") {
+        router.push("/");
+        window.fullpage_api.moveTo(3);
+      } else {
+        window.fullpage_api.moveTo(3);
+      }
+    }
+  };
+
   return (
     <nav className="fixed top-0 w-full bg-seashell shadow-md z-50 border-b-2 border-black">
       <div className="max-w-6xl mx-auto px-4">
@@ -23,29 +48,17 @@ const navbar = () => {
 
             <div className="space-x-6 text-black flex items-center">
               <button
-                className="btn btn-sm bg-seashell "
-                onClick={() => {
-                  if (pathName !== "/") {
-                    router.push("/");
-                    window.fullpage_api.moveTo(2);
-                  }
-                  window.fullpage_api.moveTo(2);
-                }}
+                className="btn btn-sm bg-seashell"
+                onClick={handleAboutClick}
               >
                 About
               </button>
-              <button className="btn btn-sm bg-seashell ">
-                <Link href={"/projects"}>Project</Link>
-              </button>
+              <Link href={"/projects"} className="btn btn-sm bg-seashell">
+                Projects
+              </Link>
               <button
-                className="btn btn-sm bg-seashell "
-                onClick={() => {
-                  if (pathName !== "/") {
-                    router.push("/");
-                    window.fullpage_api.moveTo(3);
-                  }
-                  window.fullpage_api.moveTo(3);
-                }}
+                className="btn btn-sm bg-seashell"
+                onClick={handleContactClick}
               >
                 Contact
               </button>
@@ -57,4 +70,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;

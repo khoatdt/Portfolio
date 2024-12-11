@@ -1,15 +1,21 @@
 import {
     angularIcon, aspNetIcon, cIcon,
     daisyUiIcon, kotlinIcon, postgresSQLIcon,
+    reactIcon,
     svelteIcon, tailwindIcon, typeScriptIcon
 } from "@/components/icon/custom-icon";
 import { Project } from "@/type/type";
+import {
+    LuBell, LuBookCopy, LuBookImage, LuBookOpenText,
+    LuCircleUser, LuCoins, LuCopy, LuLayoutDashboard,
+    LuReceipt, LuShare2, LuUsers, LuZapOff
+} from "react-icons/lu";
 
 
 export const listProjects: Project[] = [
     {
         id: 1,
-        title: "Yomikaze - Comics Website",
+        title: "Yomikaze - Comics Website and Android Apps",
         role: ["Frontend Developer", "Design UX/UI "],
         description:
             "Yomikaze is a graduation thesis project, a comic website and app that allows users to discover, follow, and read comics. It includes features like AI-powered translation from Japanese to English, commenting, rating, sharing, and a personalized account system for managing favorites and reading progress, with dark mode and offline reading support on mobile.",
@@ -19,63 +25,63 @@ export const listProjects: Project[] = [
         features: [
             {
                 name: "User Management",
-                description: "Provide system administrators with the ability to upgrade permissions for another account. The system can promptly manage and handle the locking of violating accounts centrally , unlocking an account. ",
-                icon: "",
+                description: "Enable admins to upgrade permissions, lock violating accounts, and unlock accounts centrally.",
+                icon: LuUsers,
             },
             {
                 name: "Content Management",
-                description: "An effective, centralized, and convenient content management solution through a website with powerful features such as adding, deleting, editing, and easily searching for content. It stands out with flexible management features, smart search, and content approval process. This product ensures content quality and saves time, enhancing work efficiency.",
-                icon: "",
+                description: "Centralized content management with features like add, delete, edit, search, and approval, ensuring quality and boosting efficiency.",
+                icon: LuBookCopy,
             },
             {
                 name: "Comic Viewer",
                 description: "Enhances reading experience with easy navigation, customizable viewing modes, and immersive effects, making comics engaging and enjoyable.",
-                icon: "",
+                icon: LuBookOpenText,
             },
             {
                 name: "Reading Experience & Interaction",
                 description: "Enhances reading with comic rankings, user comments, and a reporting feature for quality and community engagement.",
-                icon: "",
+                icon: LuBookImage,
             },
             {
                 name: "The Freemium Model",
                 description: "System offering basic content for free, while charging for premium content.",
-                icon: "",
+                icon: LuReceipt,
             },
             {
                 name: "Coin Transaction",
                 description: "Offers online payments, recharge options, transaction history, and withdrawal requests for user convenience.",
-                icon: "",
+                icon: LuCoins,
             },
             {
                 name: "Dashboard",
                 description: "Provides specialized features for system administrators for data statistics and system control",
-                icon: "",
+                icon: LuLayoutDashboard,
             },
             {
                 name: "Professional Translation Tools",
                 description: "System provides with efficient AI tools, helping users easily translate comics into various languages",
-                icon: "",
+                icon: LuCopy,
             },
             {
                 name: "Notification",
                 description: "Provides notification features for updates that users are interested in.",
-                icon: "",
+                icon: LuBell,
             },
             {
                 name: "Personalize User Account",
                 description: "Designed to provide a rich and personalized reading experience with features such as reading history, Personal Library, Custom Favorites, edit profile",
-                icon: "",
+                icon: LuCircleUser,
             },
             {
                 name: "Offline reading mode",
                 description: "User can download chapters in case they do not have internet to view online",
-                icon: "",
+                icon: LuZapOff,
             },
             {
                 name: "Revenue Sharing",
                 description: "Earn income through contributions or translations with a fair revenue-sharing system. Includes tools for tracking and reporting revenue performance",
-                icon: "",
+                icon: LuShare2,
             },
         ],
         technical: [
@@ -203,9 +209,14 @@ export const listProjects: Project[] = [
 
         thumbnail: "/Portfolio/PortfolioScreen.png",
         features: [],
-        role: ["Frontend Developer, Product Owner"],
+        role: ["Frontend Developer", "Product Owner"],
         objective: "",
-        technical: [],
+        technical: [
+            {
+                name: "React",
+                icon: reactIcon
+            }
+        ],
         screenshots: [
             {
                 src: "/Portfolio/PortfolioScreen.png",
@@ -221,7 +232,7 @@ export const listProjects: Project[] = [
 
         thumbnail: "/Portfolio/PortfolioScreen.png",
         features: [],
-        role: ["Frontend Developer, Product Owner"],
+        role: ["Frontend Developer", "Product Owner"],
         objective: "",
         technical: [],
     },

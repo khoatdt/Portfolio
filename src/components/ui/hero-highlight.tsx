@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 import React from "react";
- 
+
 export const HeroHighlight = ({
   children,
   className,
@@ -14,7 +14,7 @@ export const HeroHighlight = ({
 }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
- 
+
   function handleMouseMove({
     currentTarget,
     clientX,
@@ -22,7 +22,7 @@ export const HeroHighlight = ({
   }: React.MouseEvent<HTMLDivElement>) {
     if (!currentTarget) return;
     const { left, top } = currentTarget.getBoundingClientRect();
- 
+
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
   }
@@ -54,12 +54,12 @@ export const HeroHighlight = ({
           `,
         }}
       />
- 
+
       <div className={cn("relative z-20", className)}>{children}</div>
     </div>
   );
 };
- 
+
 export const Highlight = ({
   children,
   className,
@@ -86,7 +86,7 @@ export const Highlight = ({
         display: "inline",
       }}
       className={cn(
-        `relative inline-block pb-1 px-1 rounded-lg bg-gradient-to-r from-rose-100 to-watermelon dark:from-indigo-500 dark:to-purple-500`,
+        `relative inline-block pb-1 px-1 rounded-lg bg-gradient-to-r from-rose-100 via-[#e94057] to-watermelon dark:from-indigo-500 dark:to-purple-500`,
         className
       )}
     >

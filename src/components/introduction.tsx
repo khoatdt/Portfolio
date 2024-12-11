@@ -2,7 +2,7 @@
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { SocialButton } from "@/components/ui/social-button";
-import {  Highlight } from "@/components/ui/hero-highlight";
+import { Highlight } from "@/components/ui/hero-highlight";
 
 export function Introduction() {
   const words = [
