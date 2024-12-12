@@ -13,13 +13,13 @@ export const ProjectDetails = () => {
   const project = listProjects.find((project) => project.id === Number(id));
 
   return (
-    <div className="pt-20 container ">
+    <div className="pt-20 container h-screen overflow-y-auto">
       <button
         className="bg-white text-center w-48 rounded-xl h-14 relative border-2 border-black border-r-4 border-b-4 text-black text-xl font-semibold group"
         type="button"
       >
         <Link href={`/projects`}>
-          <div className="bg-success rounded-lg h-10 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[175px] z-10 duration-500">
+          <div className="bg-success rounded-lg h-10 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[175px] z-10 duration-300">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1024 1024"
@@ -80,9 +80,7 @@ export const ProjectDetails = () => {
             </span>
           </h2>
           <div className="flex justify-center mt-4 items-center flex-col ">
-            <h1
-              className={"text-4xl font-bold  dark:text-white text-black  "}
-            >
+            <h1 className={"text-4xl font-bold  dark:text-white text-black  "}>
               Features
             </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4  w-fit">
@@ -152,7 +150,6 @@ export const ProjectDetails = () => {
           </div>
         </div>
       </div>
-      {/* <div className="backdrop-blur-lg p-4 shadow-lg bg-white rounded-xl"></div> */}
     </div>
   );
 };

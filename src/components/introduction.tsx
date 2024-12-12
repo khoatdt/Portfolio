@@ -80,18 +80,18 @@ export function Introduction() {
         </div>
 
         <div>
-          <div className="group duration-500 hover:-skew-x-0 skew-x-6 hover:translate-x-2 pb-4 hidden md:block max-w-fit ml-10">
+          <div className="group duration-500 hover:-skew-x-0 skew-x-6 hover:translate-x-2 pb-4 hidden lg:block max-w-fit ml-10">
             <div className="group-hover:duration-400 relative rounded-2xl w-72 h-36 bg-zinc-800 text-gray-50 flex flex-col justify-center items-center gap-1 before:-skew-x-12  before:rounded-2xl  before:absolute before:content['']  before:bg-neutral-700 before:right-3 before:top-0 before:w-72 before:h-32 before:-z-10">
               <span className="text-5xl font-bold">Khoa</span>
               <p className="text-amber-300 font-bold">- Frontend Developer -</p>
             </div>
           </div>
 
-          <div className="w-96 border-t-4 border-black">
-            <p className="w-96 text-left lg:text-right mt-2 font-semibold text-xl">
+          <div className=" border-t-4 border-black">
+            <p className=" text-left lg:text-right  mt-2 font-semibold text-xl">
               Hi, I&apos;m Tuan Khoa
             </p>
-            <p className="w-96 text-left lg:text-right font-semibold text-base">
+            <p className="w-96 lg:w-96 md:w-screen sm:w-screen text-left lg:text-right font-semibold text-base">
               a passionate <Highlight> Front-End Developer</Highlight> dedicated
               to creating seamless and visually stunning websites. I specialize
               in turning ideas into engaging, user-friendly digital experiences

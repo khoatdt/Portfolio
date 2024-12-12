@@ -224,16 +224,4 @@ export const listProjects: Project[] = [
             }
         ]
     },
-    {
-        id: 4,
-        title: "Khoa Portfolio",
-        description:
-            "Personal website for learning NextJS Process, including my information, projects, and contact information. I am excited to work with you on your next project!",
-
-        thumbnail: "/Portfolio/PortfolioScreen.png",
-        features: [],
-        role: ["Frontend Developer", "Product Owner"],
-        objective: "",
-        technical: [],
-    },
 ];
