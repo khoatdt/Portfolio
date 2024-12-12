@@ -13,7 +13,7 @@ export function About() {
               What I do
             </h1>
 
-            <p className="text-lg md:text-2xl font-medium pt-4">
+            <p className="text-lg md:text-2xl font-medium pt-4  tracking-wide">
               I am a <Highlight> frontend developer</Highlight> specializing in
               <Highlight>ReactJS, NextJS, Svelte, and Angular</Highlight>, with
               a strong passion for crafting visually stunning and highly
@@ -27,7 +27,6 @@ export function About() {
               push the boundaries of creativity in web development.
             </p>
 
-            {/* <ButtonExplore /> */}
             <ExploreButton />
           </div>
 

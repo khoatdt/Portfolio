@@ -70,7 +70,7 @@ const EmailForm = () => {
   };
 
   return (
-    <div className="mt-5">
+    <div className="mt-5 place-items-center">
       {toast && (
         <div
           className={`${
@@ -82,7 +82,7 @@ const EmailForm = () => {
       )}
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col space-y-3 bg-white p-6 border-black border-2 border-r-4 border-b-4 rounded-lg"
+        className="flex flex-col space-y-3 bg-white p-6 border-black border-2 border-r-4 border-b-4 rounded-lg md:w-full sm:w-4/5 w-4/5"
       >
         <div className="flex flex-col gap-3">
           <label htmlFor="Name" className="font-semibold">

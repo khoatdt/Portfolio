@@ -5,7 +5,7 @@ import { Project } from "@/type/type";
 
 const project = () => {
   return (
-    <div className="pt-28 container">
+    <div className="pt-20 container h-screen overflow-y-auto">
       <div className="place-items-center">
         <h1
           className={
