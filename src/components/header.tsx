@@ -5,8 +5,14 @@ import { usePathname, useRouter } from "next/navigation";
 
 declare global {
   interface Window {
-    fullpage_api: any; // replace 'any' with the correct type if available
+    fullpage_api: unknown; // Sử dụng unknown thay vì any
   }
+}
+
+interface FullPageAPI {
+  moveTo(section: number | string): void;
+  setAllowScrolling(allow: boolean): void;
+  getActiveSection(): { anchor: string; index: number };
 }
 
 const Navbar = () => {
@@ -17,9 +23,11 @@ const Navbar = () => {
     if (typeof window !== "undefined" && window.fullpage_api) {
       if (pathName !== "/") {
         router.push("/");
-        window.fullpage_api.moveTo(2);
+        const api = window.fullpage_api as FullPageAPI;
+        api.moveTo(2);
       } else {
-        window.fullpage_api.moveTo(2);
+        const api = window.fullpage_api as FullPageAPI;
+        api.moveTo(2);
       }
     }
   };
@@ -28,9 +36,11 @@ const Navbar = () => {
     if (typeof window !== "undefined" && window.fullpage_api) {
       if (pathName !== "/") {
         router.push("/");
-        window.fullpage_api.moveTo(3);
+        const api = window.fullpage_api as FullPageAPI; // Ép kiểu khi cần
+        api.moveTo(3);
       } else {
-        window.fullpage_api.moveTo(3);
+        const api = window.fullpage_api as FullPageAPI;
+        api.moveTo(3);
       }
     }
   };
