@@ -92,7 +92,7 @@ export const ProjectDetails = () => {
                     </h3>
 
                     <div className="flex justify-center items-center w-full text-black">
-                      <feature.icon size={60} />
+                      <feature.icon size="60"/>
                     </div>
                   </div>
                 </PinContainer>

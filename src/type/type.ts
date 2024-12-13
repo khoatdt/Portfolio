@@ -6,12 +6,12 @@ export interface Image {
 export interface feature {
     name: string;
     description: string;
-    icon: any;
+    icon: (props: { size?: string }) => JSX.Element;
 }
 
 export interface Technical {
     name: string;
-    icon: any;
+    icon: React.FC;
 }
 
 export interface Project {
