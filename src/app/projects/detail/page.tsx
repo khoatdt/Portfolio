@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { listProjects } from "@/data/projects";
 import Link from "next/link";
