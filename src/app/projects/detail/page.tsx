@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { listProjects } from "@/data/projects";
 import Link from "next/link";
-import React from "react";
+import { listProjects } from "@/data/projects";
 import { PinContainer } from "@/components/ui/3d-pin";
+import { useRouter } from "next/router";
 
 const ProjectDetails = ({
   params,
@@ -11,7 +11,22 @@ const ProjectDetails = ({
   params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
-    const project = listProjects.find((project) => project.id === Number(searchParams?.id));
+  const project = listProjects.find(
+    (project) => project.id === Number(searchParams?.id)
+  );
+
+  if (!project) {
+    return (
+      <div className="text-center pt-20">
+        <h1 className="text-2xl font-bold text-red-500">Project not found!</h1>
+        <Link href="/projects" className="text-blue-500 underline">
+          Go back to Projects
+        </Link>
+      </div>
+    );
+  }
+
+  console.log("ProjectDetails rendered!");
   return (
     <div className="pt-20 container h-screen overflow-y-auto">
       <button
@@ -83,7 +98,7 @@ const ProjectDetails = ({
             <h1 className={"text-4xl font-bold  dark:text-white text-black  "}>
               Features
             </h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4  w-fit">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4  w-fit">
               {project?.features?.map((feature, index) => (
                 <PinContainer key={index} title={feature.description}>
                   <div className=" p-2 tracking-tight flex flex-col justify-center items-center gap-2 text-slate-100/50  w-[15rem] h-[8rem]  ">
@@ -104,7 +119,7 @@ const ProjectDetails = ({
               Tech Experience
             </h1>
 
-            <div className="grid my-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 ">
+            <div className="grid my-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
               {project?.technical.map((tech, index) => (
                 <div
                   key={index}
