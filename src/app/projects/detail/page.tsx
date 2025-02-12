@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { listProjects } from "@/data/projects";
 import { PinContainer } from "@/components/ui/3d-pin";
-import { useRouter } from "next/router";
 
 const ProjectDetails = ({
   params,
@@ -11,8 +10,10 @@ const ProjectDetails = ({
   params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
+  
+  const id = searchParams?.id;
   const project = listProjects.find(
-    (project) => project.id === Number(searchParams?.id)
+    (project) => project.id === Number(id)
   );
 
   if (!project) {
@@ -26,7 +27,6 @@ const ProjectDetails = ({
     );
   }
 
-  console.log("ProjectDetails rendered!");
   return (
     <div className="pt-20 container h-screen overflow-y-auto">
       <button
@@ -55,16 +55,14 @@ const ProjectDetails = ({
         <p className="translate-x-2">Go back</p>
       </button>
 
-      <h1
-        className={
-          "text-4xl md:text-5xl text-center lg:text-6xl font-bold w-full  dark:text-white text-black pt-5"
-        }
-      >
+      <h1 className="text-4xl md:text-5xl text-center lg:text-6xl font-bold w-full dark:text-white text-black pt-5">
         {project?.title}
       </h1>
+      
       <div className="flex justify-center items-center">
         <hr className="my-5 h-0.5 border-t-0 bg-black w-1/4" />
       </div>
+
       <div className="backdrop-blur-lg p-4 shadow-lg bg-white rounded-xl border-black border-2 border-b-4 mb-5">
         <div className="flex p-2 gap-1 mb-2">
           <div className="">
@@ -77,9 +75,10 @@ const ProjectDetails = ({
             <span className="bg-success box inline-block center w-3 h-3 rounded-full"></span>
           </div>
         </div>
+
         <div className="card__content">
-          {" "}
           <p className="text-lg">{project?.description}</p>
+          
           <div className="flex gap-4 py-2 flex-wrap">
             <h2 className="text-xl font-bold">Role:</h2>
             {project?.role.map((role, index) => (
@@ -88,81 +87,88 @@ const ProjectDetails = ({
               </p>
             ))}
           </div>
+
           <h2 className="text-xl font-bold">
             Objective:{" "}
             <span className="text-slate-600 font-semibold">
               {project?.objective}
             </span>
           </h2>
-          <div className="flex justify-center mt-4 items-center flex-col ">
-            <h1 className={"text-4xl font-bold  dark:text-white text-black  "}>
-              Features
-            </h1>
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4  w-fit">
-              {project?.features?.map((feature, index) => (
-                <PinContainer key={index} title={feature.description}>
-                  <div className=" p-2 tracking-tight flex flex-col justify-center items-center gap-2 text-slate-100/50  w-[15rem] h-[8rem]  ">
-                    <h3 className=" pb-2 font-bold text-center text-black">
-                      {feature.name}
-                    </h3>
 
-                    <div className="flex justify-center items-center w-full text-black">
-                      <feature.icon size="60" />
+          {project?.features && project.features.length > 0 && (
+            <div className="flex justify-center mt-4 items-center flex-col">
+              <h1 className="text-4xl font-bold dark:text-white text-black">
+                Features
+              </h1>
+              <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-fit">
+                {project.features.map((feature, index) => (
+                  <PinContainer key={index} title={feature.description}>
+                    <div className="p-2 tracking-tight flex flex-col justify-center items-center gap-2 text-slate-100/50 w-[15rem] h-[8rem]">
+                      <h3 className="pb-2 font-bold text-center text-black">
+                        {feature.name}
+                      </h3>
+                      <div className="flex justify-center items-center w-full text-black">
+                        <feature.icon size="60" />
+                      </div>
+                    </div>
+                  </PinContainer>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {project?.technical && project.technical.length > 0 && (
+            <div className="flex justify-center mt-10 w-full items-center flex-col">
+              <h1 className="text-4xl font-bold dark:text-white text-black">
+                Tech Experience
+              </h1>
+              <div className="grid my-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+                {project.technical.map((tech, index) => (
+                  <div
+                    key={index}
+                    className="hover:-translate-y-2 group bg-neutral-50 duration-500 w-44 h-44 flex text-neutral-600 flex-col justify-center items-center relative rounded-xl overflow-hidden shadow-md"
+                  >
+                    <svg
+                      viewBox="0 0 200 200"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="absolute blur z-10 fill-amber-200 duration-500 group-hover:blur-none group-hover:scale-105"
+                    >
+                      <path
+                        transform="translate(100 100)"
+                        d="M39.5,-49.6C54.8,-43.2,73.2,-36.5,78.2,-24.6C83.2,-12.7,74.8,4.4,69,22.5C63.3,40.6,60.2,59.6,49.1,64.8C38.1,70,19,61.5,0.6,60.7C-17.9,59.9,-35.9,67,-47.2,61.9C-58.6,56.7,-63.4,39.5,-70,22.1C-76.6,4.7,-84.9,-12.8,-81.9,-28.1C-79,-43.3,-64.6,-56.3,-49.1,-62.5C-33.6,-68.8,-16.8,-68.3,-2.3,-65.1C12.1,-61.9,24.2,-55.9,39.5,-49.6Z"
+                      ></path>
+                    </svg>
+                    <div className="z-20 flex flex-col justify-center items-center space-y-4">
+                      <span className="font-bold text-lg ml-2 text-center">
+                        {tech.name}
+                      </span>
+                      <tech.icon />
                     </div>
                   </div>
-                </PinContainer>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="flex justify-center mt-10 w-full items-center flex-col ">
-            <h1 className={"text-4xl font-bold dark:text-white text-black  "}>
-              Tech Experience
-            </h1>
+          )}
 
-            <div className="grid my-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
-              {project?.technical.map((tech, index) => (
-                <div
-                  key={index}
-                  className="hover:-translate-y-2 group bg-neutral-50 duration-500 w-44 h-44 flex text-neutral-600 flex-col justify-center items-center relative rounded-xl overflow-hidden shadow-md"
-                >
-                  <svg
-                    viewBox="0 0 200 200"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="absolute blur z-10 fill-amber-200 duration-500 group-hover:blur-none group-hover:scale-105"
-                  >
-                    <path
-                      transform="translate(100 100)"
-                      d="M39.5,-49.6C54.8,-43.2,73.2,-36.5,78.2,-24.6C83.2,-12.7,74.8,4.4,69,22.5C63.3,40.6,60.2,59.6,49.1,64.8C38.1,70,19,61.5,0.6,60.7C-17.9,59.9,-35.9,67,-47.2,61.9C-58.6,56.7,-63.4,39.5,-70,22.1C-76.6,4.7,-84.9,-12.8,-81.9,-28.1C-79,-43.3,-64.6,-56.3,-49.1,-62.5C-33.6,-68.8,-16.8,-68.3,-2.3,-65.1C12.1,-61.9,24.2,-55.9,39.5,-49.6Z"
-                    ></path>
-                  </svg>
-
-                  <div className="z-20 flex flex-col justify-center items-center space-y-4">
-                    <span className="font-bold text-lg ml-2 text-center">
-                      {tech.name}
-                    </span>
-                    <tech.icon />
-                  </div>
-                </div>
-              ))}
+          {project?.screenshots && project.screenshots.length > 0 && (
+            <div className="flex justify-center mt-4 w-full items-center flex-col">
+              <h1 className="text-4xl font-bold dark:text-white text-black">
+                Screen shot
+              </h1>
+              <div className="grid mt-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 place-items-center space-x-2">
+                {project.screenshots.map((screenshot, index) => (
+                  <Image
+                    src={screenshot.src}
+                    alt={screenshot.id.toString()}
+                    className="rounded-xl shadow-xl"
+                    width={1000}
+                    height={600}
+                    key={index}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="flex justify-center mt-4 w-full items-center flex-col ">
-            <h1 className={"text-4xl  font-bold dark:text-white text-black "}>
-              Screen shot
-            </h1>
-            <div className="grid mt-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 place-items-center space-x-2">
-              {project?.screenshots?.map((screenshot, index) => (
-                <Image
-                  src={screenshot.src}
-                  alt={screenshot.id.toString()}
-                  className="rounded-xl shadow-xl"
-                  width={1000}
-                  height={600}
-                  key={index}
-                />
-              ))}
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
