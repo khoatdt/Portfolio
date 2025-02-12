@@ -3,17 +3,15 @@ import Link from "next/link";
 import { listProjects } from "@/data/projects";
 import { PinContainer } from "@/components/ui/3d-pin";
 
-const ProjectDetails = async({
+const ProjectDetails = ({
+  params,
   searchParams,
 }: {
-
+  params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
-  
   const id = searchParams?.id;
-  const project = listProjects.find(
-    (project) => project.id === Number(id)
-  );
+  const project = listProjects.find((project) => project.id === Number(id));
 
   if (!project) {
     return (
@@ -57,7 +55,7 @@ const ProjectDetails = async({
       <h1 className="text-4xl md:text-5xl text-center lg:text-6xl font-bold w-full dark:text-white text-black pt-5">
         {project?.title}
       </h1>
-      
+
       <div className="flex justify-center items-center">
         <hr className="my-5 h-0.5 border-t-0 bg-black w-1/4" />
       </div>
@@ -77,7 +75,7 @@ const ProjectDetails = async({
 
         <div className="card__content">
           <p className="text-lg">{project?.description}</p>
-          
+
           <div className="flex gap-4 py-2 flex-wrap">
             <h2 className="text-xl font-bold">Role:</h2>
             {project?.role.map((role, index) => (
