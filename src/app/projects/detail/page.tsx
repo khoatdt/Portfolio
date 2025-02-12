@@ -4,7 +4,6 @@ import { listProjects } from "@/data/projects";
 import { PinContainer } from "@/components/ui/3d-pin";
 
 const ProjectDetails = ({
-  params,
   searchParams,
 }: {
   params: { slug: string };
