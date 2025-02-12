@@ -6,7 +6,7 @@ import { PinContainer } from "@/components/ui/3d-pin";
 const ProjectDetails = ({
   searchParams,
 }: {
-  params: { slug: string };
+
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
   
