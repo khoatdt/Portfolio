@@ -3,7 +3,7 @@ import Link from "next/link";
 import { listProjects } from "@/data/projects";
 import { PinContainer } from "@/components/ui/3d-pin";
 
-const ProjectDetails = ({
+const ProjectDetails = async({
   searchParams,
 }: {
 
